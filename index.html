@@ -23,10 +23,10 @@
       <nav class="desktop-nav">
         <div class="nav-item">
           <a href="#">Product</a>
-          <img src="images/icon-arrow-light.svg" alt="arrow">
+          <img class="arrow" src="images/icon-arrow-light.svg" alt="arrow">
           </svg>
         </div>
-        <div class="dropdown hidden">
+        <div class="dropdown hidden product">
           <ul>
             <li>Overview</li>
             <li>Pricing</li>
@@ -38,9 +38,9 @@
 
         <div class="nav-item">
           <a href="#">Company</a>
-          <img src="images/icon-arrow-light.svg" alt="arrow">
+          <img class="arrow" src="images/icon-arrow-light.svg" alt="arrow">
         </div>
-        <div class="dropdown hidden">
+        <div class="dropdown hidden company">
           <ul>
             <li>About</li>
             <li>Team</li>
@@ -51,9 +51,9 @@
 
         <div class="nav-item">
           <a href="#">Connect</a>
-          <img src="images/icon-arrow-light.svg" alt="arrow">
+          <img class="arrow" src="images/icon-arrow-light.svg" alt="arrow">
         </div>
-        <div class="dropdown hidden">
+        <div class="dropdown hidden connect">
           <ul>
             <li>Contact</li>
             <li>Newsletter</li>
@@ -71,21 +71,15 @@
     <div class="toggle">
       <img src="images/icon-hamburger.svg" alt="toggle" id="toggle">
       </svg>
-
-      <svg class="hidden" id="close-button" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
-        aria-hidden="true">
-        <use xlink:href="images/icon-close.svg"></use>
-      </svg>
+      <img class="hidden" src="images/icon-close.svg" alt="close button">
     </div>
 
     <nav class="mobile-nav hidden">
       <div class="nav-item">
         <a href="#">Product</a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" aria-hidden="true">
-          <use xlink:href="images/icon-arrow-dark.svg"></use>
-        </svg>
+        <img class="arrow" src="images/icon-arrow-dark.svg" alt="arrow">
       </div>
-      <div class="dropdown hidden">
+      <div class="mobile dropdown hidden">
         <ul>
           <li>Overview</li>
           <li>Pricing</li>
@@ -97,11 +91,9 @@
 
       <div class="nav-item">
         <a href="#">Company</a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" aria-hidden="true">
-          <use xlink:href="images/icon-arrow-dark.svg"></use>
-        </svg>
+        <img class="arrow" src="images/icon-arrow-dark.svg" alt="arrow">
       </div>
-      <div class="dropdown hidden">
+      <div class="mobile dropdown hidden">
         <ul>
           <li>About</li>
           <li>Team</li>
@@ -112,16 +104,19 @@
 
       <div class="nav-item">
         <a href="#">Connect</a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" aria-hidden="true">
-          <use xlink:href="images/icon-arrow-dark.svg"></use>
-        </svg>
+        <img class="arrow" src="images/icon-arrow-dark.svg" alt="arrow">
       </div>
-      <div class="dropdown hidden">
+      <div class="mobile dropdown hidden">
         <ul>
           <li>Contact</li>
           <li>Newsletter</li>
           <li>LinkedIn</li>
         </ul>
+      </div>
+
+      <div class="mobile-buttons">
+        <button class="btn plain-black-btn">Login</button>
+        <button class="btn accent-btn">Sign Up</button>
       </div>
     </nav>
 
@@ -141,7 +136,7 @@
       <h2>Designed for the future</h2>
 
       <div class="mobile-future-image">
-        <img src="images/illustration-editor-mobile.svg" alt="clipart">
+        <img src="images/illustration-editor-mobile.svg" alt="phones cliipart">
       </div>
 
       <div class="future-first-paragraph">
@@ -182,9 +177,7 @@
 
   <section class="free">
     <div class="free-image-container">
-      <img srcset="images/illustration-laptop-mobile.svg 375w,
-                  images/illustration-laptop-desktop.svg 1440w" sizes="(max-width: 375px) 100vw, 1440px"
-        src="images/illustration-laptop-desktop.svg" alt="laptop" />
+      <img src="images/illustration-laptop-desktop.svg" alt="laptop" id="laptop-image" />
     </div>
 
     <div class="free-content">

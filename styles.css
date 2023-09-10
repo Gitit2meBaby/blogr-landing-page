@@ -70,12 +70,95 @@ header>img {
 
 .nav-item {
     cursor: pointer;
+    position: relative;
+
 }
 
 .desktop-nav a {
     text-decoration: none;
     color: var(--White);
     padding-right: .3rem;
+}
+
+.dropdown {
+    position: absolute;
+    top: 3.5rem;
+    padding: 1.5rem 3.5rem;
+    border-radius: .5rem;
+    background-color: var(--White);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    color: var(--Very-dark-black-blue);
+}
+
+.company {
+    left: 26rem;
+}
+
+.connect {
+    left: 33.5rem;
+}
+
+.dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: -1.5rem;
+    line-height: 2rem;
+}
+
+.dropdown li {
+    cursor: pointer;
+}
+
+.dropdown li:hover {
+    font-weight: 600;
+}
+
+/* mobile Nav */
+.mobile-nav {
+    position: absolute;
+    top: 3rem;
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--White);
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    z-index: 5;
+
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: var(--Very-dark-black-blue);
+}
+
+.mobile {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    padding: 2rem 0;
+    text-align: center;
+    background-color: hsla(240, 2%, 79%, .3);
+}
+
+.mobile>ul {
+    margin: 0;
+    line-height: 2.5rem;
+}
+
+.mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--Grayish-blue);
+}
+
+.toggle {
+    cursor: pointer;
 }
 
 @media screen and (min-width: 700px) {
@@ -106,6 +189,7 @@ header>img {
     border-radius: 4rem;
     padding: 1rem 2rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .primary-btn {
@@ -126,6 +210,22 @@ header>img {
     color: var(--White);
 }
 
+.plain-black-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--Very-dark-black-blue);
+}
+
+.accent-btn {
+    border: none;
+    color: var(--White);
+    width: 50%;
+    align-self: center;
+    background: linear-gradient(to right,
+            hsl(13, 100%, 72%) 25%,
+            hsl(353, 100%, 62%) 75%);
+}
+
 @media screen and (max-width: 700px) {
     .btn {
         padding: .8rem 1rem;
@@ -136,13 +236,9 @@ header>img {
 .hero {
     background:
         url("images/bg-pattern-intro-desktop.svg"),
-        /* Background image */
         linear-gradient(to right,
             hsl(13, 100%, 72%) 25%,
-            /* Left color stops at 25% */
-            hsl(353, 100%, 62%) 75%
-            /* Right color starts at 25% and ends at 100% */
-        );
+            hsl(353, 100%, 62%) 75%);
     background-size: 250%;
     background-position: 30% 52%;
     height: 80dvh;
@@ -178,7 +274,6 @@ header>img {
 
 @media screen and (max-width: 700px) {
     .hero {
-        padding: 0 2rem;
         background:
             url("images/bg-pattern-intro-mobile.svg"),
             linear-gradient(to right,
@@ -186,14 +281,18 @@ header>img {
                 hsl(353, 100%, 62%) 85%);
         background-size: 400%;
         background-position: 32% 30%;
+        margin-top: -2rem;
+        padding: 0 2rem;
     }
 
     .hero h1 {
         font-size: 2rem;
+        padding-top: 3rem;
     }
 
     .hero h2 {
         text-align: center;
+        padding-bottom: 2rem;
     }
 
     .hero-buttons {
@@ -340,7 +439,7 @@ header>img {
     .infrastructure {
         display: flex;
         flex-direction: column;
-        height: 80dvh;
+        height: 90dvh;
     }
 
     .infrastructure-image-container img {
@@ -352,15 +451,19 @@ header>img {
     .infrastructure-content {
         padding: 2rem;
         text-align: center;
+        position: relative;
+        z-index: 1;
     }
 
     .infrastructure-content h2 {
         text-align: center;
+
     }
 
     .infrastructure-image-container {
         background-position: 50% 50%;
         background-size: 160%;
+        z-index: 10;
     }
 }
 
@@ -406,6 +509,41 @@ header>img {
     color: var(--Very-dark-grayish-blue);
 }
 
+@media screen and (max-width: 700px) {
+    .free {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 0;
+    }
+
+    .free-image-container {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .free-image-container img {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .free-content {
+        gap: 2rem;
+        padding: 0;
+    }
+
+    .free-first-paragraph,
+    .free-second-paragraph {
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    #laptop-image {
+        content: url('images/illustration-laptop-mobile.svg');
+    }
+}
+
 /* FOOTER */
 footer {
     background-color: var(--Very-dark-black-blue);
@@ -439,7 +577,28 @@ footer li {
     cursor: pointer;
 }
 
+@media screen and (max-width: 700px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
 /* JAVASCRIPT CLASSES */
+.rotate {
+    transform: rotate(180deg);
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-color: var(--White);
+    text-underline-offset: 4px;
+
+
+    font-weight: 600;
+}
+
 .hidden {
     display: none;
 }
